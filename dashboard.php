@@ -1,6 +1,11 @@
 <?php
 
 $conn= new mysqli("localhost","root","","project website");
+session_start();
+    
+    if (!isset($_SESSION['username'])) {
+        header("Location: index.php");
+    }
 
 ?>
 
