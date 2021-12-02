@@ -61,6 +61,7 @@ if(empty($_SESSION["keranjang"]) OR !isset($_SESSION["keranjang"])){
   </thead>
   <tbody>
     <?php $number = 1; ?>
+    <?php $totalbelanja = 0; ?>
     <?php foreach ($_SESSION["keranjang"] as $id_produk => $jumlah): ?>
     <?php 
         $take = $conn->query("SELECT * FROM produk
@@ -75,12 +76,19 @@ if(empty($_SESSION["keranjang"]) OR !isset($_SESSION["keranjang"])){
           <td><?php echo $jumlah; ?></td>
           <td>Rp. <?php echo number_format($total); ?></td>
           <td>
-              <a href="delete cart.php?id=<?php echo $id_produk ?>" class="btn btn-danger btn-xs">Delete</a>
+              <a href="delete cart.php?id=<?php echo $id_produk ?>" class="btn btn-danger btn-xs">Remove</a>
           </td>
           <?php $number++; ?>
       </tr>
+      <?php $totalbelanja+=$total; ?>
       <?php endforeach ?>
   </tbody>
+  <tfoot>
+      <tr>
+          <th>Total Price</th>
+          <th>Rp. <?php echo number_format($totalbelanja) ?></th>
+      </tr>
+  </tfoot>
 </table>
 <a href="drink.php" class="btn btn-primary">Order Again</a>
 <a href="checkout.php" class="btn btn-primary">Check Out</a>
