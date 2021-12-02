@@ -15,44 +15,35 @@ if (!isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>123200092</title>
+    <title>Edit</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="banner">
-        <h1 class="banner-head">LIST OF INVENTORY </br> EVERYTHING OFFICE</h1>
+        <h1 class="banner-head">Update Data</h1>
     </div>
 
-<div class="pure-menu pure-menu-horizontal">
+    <div class="pure-menu pure-menu-horizontal">
     <ul class="pure-menu-list">
         <li class="pure-menu-item pure-menu-selected">
             <a href="main.php" class="pure-menu-link">Home</a>
-        </li>
-        <li class="pure-menu-item pure-menu-selected">
-            <a href="list product.php" class="pure-menu-link">Inventory List</a>
         </li>
         <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
             <a href="#" id="menuLink1" class="pure-menu-link">List per Category</a>
             <ul class="pure-menu-children">
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Buildings</a>
+                    <a href="drinkdashboard.php" class="pure-menu-link">Drink</a>
                 </li>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Vehicles</a>
-                </li>
-                <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Office Inventory</a>
-                </li>
-                <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Electronic</a>
+                    <a href="dashboardsnack.php" class="pure-menu-link">Snack</a>
                 </li>
             </ul>
         </li>
         </div>
-        <a class="nav-link" href="proses_logout.php" style="float: right"><button type="button" class="btn" style="color: white; background-color: #1F1D36;">Keluar</button></a>
-      </div>
+        <a class="nav-link" href="logout.php"><button type="button" class="btn" style="float: right; bottom:0px; color: white; background-color: #c68b59;">Log out</button></a>
+        </div>
     </ul>
 </div>
     <?php
@@ -64,10 +55,10 @@ if (!isset($_SESSION['username'])) {
         ?>
 
       <div class="container-xxl">
-        <br>
-        <nav class="navbar navbar-dark" style="background-color: #1F1D36; margin-bottom: 25px;">
+        <br><br>
+        <nav class="navbar navbar-dark" style="background-color: #c68b59; margin-bottom: 25px;">
           <div class="container-fluid">
-            <span class="navbar-brand mb-0 a">Update Data Inventory</span>
+            <span class="navbar-brand mb-0 a">Update Data</span>
           </div>
         </nav>
         
@@ -109,7 +100,7 @@ if (!isset($_SESSION['username'])) {
             <tr>
               <td>
                 <br>
-                <input class="btn btn-dark" type="submit" name="submit" value="change" style="color: white; background-color: #1F1D36;">
+                <input class="btn btn-dark" type="submit" name="submit" value="Change" style="color: white; background-color: #c68b59;">
                 <input class="btn btn-outline-dark" type="reset" value="Cancel">
               </td>
             </tr>
@@ -118,11 +109,9 @@ if (!isset($_SESSION['username'])) {
         <?php } ?>
       </div>
     
-<div class="footer l-box">
-    <p>
-        <h3> Inventory Web 2021 </h3>
-    </p>
-</div>
+      <div class="footer" style="margin-top: 30px;">
+        <h3>dream café</h3>
+      </div>
 </body>
 
 <footer>
