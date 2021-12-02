@@ -2,6 +2,11 @@
 
 $conn= new mysqli("localhost","root","","project website");
 
+session_start();
+    
+    if (!isset($_SESSION['username'])) {
+        header("Location: index.php");
+    }
 ?>
 
 
@@ -38,7 +43,7 @@ $conn= new mysqli("localhost","root","","project website");
             </ul>
         </li>
         </div>
-        <a class="nav-link" href="logout.php" style="float: right"><button type="button" class="btn" style="color: white; background-color: #1F1D36;">Keluar</button></a>
+        <a class="nav-link" href="logout.php" style="float: right"><button type="button" class="btn" style="color: white; background-color: #1F1D36;">Log Out</button></a>
         </div>
     </ul>
 </div>
@@ -64,7 +69,7 @@ $conn= new mysqli("localhost","root","","project website");
         $query = mysqli_query($conn, "SELECT * FROM produk2");
         while($data = mysqli_fetch_array($query)){?>
       <tr>
-        <td> <?php echo $data['id_produk']; ?></td>
+        <td> <?php echo $nomor ?></td>
         <td> <?php echo $data['nama_produk']; ?></td>
         <td> <?php echo $data['caption']; ?></td>
         <td>Rp. <?php echo number_format($data['harga_produk']); ?></td>
@@ -72,6 +77,7 @@ $conn= new mysqli("localhost","root","","project website");
             <a href="edit2.php?id=<?php echo $data['id_produk'];?>" class="btn btn-primary">Edit</a>
             <a href="delete2.php?id=<?php echo $data['id_produk'];?>" class="btn btn-primary">Delete</a>
         </td>
+        <?php $nomor++; ?>
       </tr>
       <?php } ?>
 
